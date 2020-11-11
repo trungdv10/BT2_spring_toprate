@@ -20,12 +20,23 @@ public class Customer {
     @Column(name = "age")
     private Integer age;
 
+    @Transient
+    private String nameEN;
+
     public Customer() {};
     public Customer(Integer id, String name, String email, Integer age) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.age = age;
+    }
+
+    public Customer(Integer id, String name, String nameEN, String email, Integer age) {
+        this.id = id;
+        this.name=name;
+        this.nameEN=nameEN;
+        this.email=email;
+        this.age=age;
     }
 
     public Integer getId() {
@@ -58,6 +69,14 @@ public class Customer {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getNameEN() {
+        return nameEN;
+    }
+
+    public void setNameEN(String nameEN) {
+        this.nameEN = nameEN;
     }
 
     @Override
